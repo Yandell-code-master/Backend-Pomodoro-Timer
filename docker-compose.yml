@@ -17,8 +17,9 @@ services:
       - db       
     restart: on-failure
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:sqlserver://db:1433;databaseName=master;encrypt=false;
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://sql-server.railway.internal:1433;databaseName=master;encrypt=false;
       - SPRING_DATASOURCE_USERNAME=sa
+      - ACCEPT_EULA=Y
       - SPRING_DATASOURCE_PASSWORD=TuPasswordSeguro123!
       - APP_JWT_SECRET=SwDxcS4inPNnZTdMYXX7VLSoCixjg4jNS2i7oKFfsm9pyg5ufTuj7wFOorXE
       - APP_GOOGLE_CLIENT_ID=913993571162-hirk98knfjtejttd92udhug2v0kqrp3r.apps.googleusercontent.com
