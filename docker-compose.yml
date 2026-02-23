@@ -23,6 +23,7 @@ services:
       - APP_JWT_SECRET=SwDxcS4inPNnZTdMYXX7VLSoCixjg4jNS2i7oKFfsm9pyg5ufTuj7wFOorXE
       - APP_GOOGLE_CLIENT_ID=913993571162-hirk98knfjtejttd92udhug2v0kqrp3r.apps.googleusercontent.com
       - CLOUDINARY_URL=cloudinary://231678114518974:Chy6D46tANDR9lM9unJdtFbnEaE@ddzgtekra
+      - RESEND_API_KEY=re_XMhGdNnV_2tmHcrRVV41PqUCDK5bYAU3o
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: sql_server_container

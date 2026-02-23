@@ -31,6 +31,7 @@ import com.resend.services.emails.model.CreateEmailResponse;
 import io.github.cdimascio.dotenv.Dotenv;
 import jakarta.transaction.Transactional;
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.accept.MediaTypeParamApiVersionResolver;
 import org.springframework.web.multipart.MultipartFile;
@@ -147,11 +148,12 @@ public class UserService {
                 return Mapper.toDTO(ownerOfToken);
     }
 
+    // getting the environment variable from .env file
+    @Value("${RESEND_API_KEY}")
+    private String apiKey;
 
     public void sendEmailToVerify(String email, String token) throws ResendException{
-        // getting the environment variable from .env file
-        Dotenv dotenv = Dotenv.load();
-        String apiKey = dotenv.get("RESEND_API_KEY");
+
 
         Resend resend = new Resend(apiKey);
 

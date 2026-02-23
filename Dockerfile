@@ -20,7 +20,6 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
-COPY .env .
 EXPOSE 8080
 # esto se llama exec Form
 # el primer valor de la lista es lo que se llama el Rey del contenedor que es el preceso PID 1 en este caso es java, y lo que pasa 
