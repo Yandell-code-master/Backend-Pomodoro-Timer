@@ -152,12 +152,13 @@ public class UserService {
     @Value("${RESEND_API_KEY}")
     private String apiKey;
 
+    @Value("${app.frontend.url}")
+    private String  frontendUrl;
+
     public void sendEmailToVerify(String email, String token) throws ResendException{
-
-
         Resend resend = new Resend(apiKey);
 
-        String URLSetPassword = "http://localhost:8000/set-password.html?token=" + token;
+        String URLSetPassword =  frontendUrl + "/set-password.html?token=" + token;
 
         CreateEmailOptions emailConfiguration = CreateEmailOptions.builder()
                 .from("Support <onboarding@resend.dev>")

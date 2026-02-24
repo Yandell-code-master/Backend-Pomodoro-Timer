@@ -6,6 +6,8 @@ import com.backend.code.pomodoro_timer.model.UserFromEmail;
 import com.backend.code.pomodoro_timer.model.UserFromGoogle;
 import com.backend.code.pomodoro_timer.service.UserService;
 import com.resend.core.exception.ResendException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +29,7 @@ public class UserController {
 
         @PostMapping("/save-user-email")
         public ResponseEntity<UserFromEmailDTO> saveUserFromEmail(@RequestBody UserFromEmail userFromEmail) throws ResendException {
+
             return ResponseEntity.status(HttpStatus.CREATED)
                     .body(userService.saveUserFromEmail(userFromEmail));
         }
@@ -39,10 +42,9 @@ public class UserController {
 
 
         @PostMapping("/set-password")
-        public ResponseEntity<UserFromEmailDTO> updatePassword(@RequestBody PasswordChangeDTO passwordChangeDTO) {
-            UserFromEmailDTO userFromEmailDTO = userService.updatePassword(passwordChangeDTO.getPassword(), passwordChangeDTO.getToken());
+        public ResponseEntity<UserFromEmailDTO> updatePassword(@RequestBody PasswordChangeDTO passwordChangeDTO)  {
 
-            return ResponseEntity.ok().body(userFromEmailDTO);
+            return ResponseEntity.ok().body(userService.updatePassword(passwordChangeDTO.getPassword(), passwordChangeDTO.getToken()));
         }
 
         @PostMapping("/log-in-google")
