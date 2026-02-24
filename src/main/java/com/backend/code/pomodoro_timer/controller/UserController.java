@@ -92,4 +92,9 @@ public class UserController {
 
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
+
+        @GetMapping("/ping")
+        public ResponseEntity<String> ping() {
+            return  ResponseEntity.status(HttpStatus.OK).body("pong");
+        }
 }
