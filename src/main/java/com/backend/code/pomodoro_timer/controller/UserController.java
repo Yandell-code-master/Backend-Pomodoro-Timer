@@ -16,7 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins = {"http://localhost:8000", "https://yandell-code-master.github.io/Pomodoro-Timer"})
+@CrossOrigin(origins = {"http://localhost:8000", "https://yandell-code-master.github.io"})
 public class UserController {
 
         private final UserService userService;
