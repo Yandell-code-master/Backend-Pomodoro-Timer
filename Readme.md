@@ -37,7 +37,7 @@ The application is configured to be deployed on **Railway**. It utilizes a **Pos
 ##  Related Repositories
 
 This project works in conjunction with the frontend:
-* **Frontend Repository:** [Pomodoro-Timer](https://github.com/Yandell-code-master/Pomodoro-Timer)
+* **Frontend Repository:** [Pomodoro-Timer](https://github.com/Yandell-code-master/Frontend-Pomodoro-Timer)
 
 ---
 Developed by [Yandell-code-master](https://github.com/Yandell-code-master)
